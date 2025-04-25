@@ -1,9 +1,9 @@
 import { Product, CreateProductPayload, UpdateProductPayload } from '../types/product';
 
-import { API_URL } from '../config';
+// import { API_URL } from '../config';
 // Fetch all products
 export const fetchProducts = async (): Promise<Product[]> => {
-  const response = await fetch(`${API_URL}/products`);
+  const response = await fetch(`/api/products`);
   if (!response.ok) {
     throw new Error('Failed to fetch products');
   }
@@ -12,7 +12,7 @@ export const fetchProducts = async (): Promise<Product[]> => {
 
 // Fetch a single product by ID
 export const fetchProductById = async (id: number): Promise<Product> => {
-  const response = await fetch(`${API_URL}/products/${id}`);
+  const response = await fetch(`/api/products/${id}`);
   if (!response.ok) {
     throw new Error(`Failed to fetch product with ID ${id}`);
   }
@@ -30,7 +30,7 @@ export const createProduct = async (productData: CreateProductPayload): Promise<
     formData.append('image', productData.image);
   }
 
-  const response = await fetch(`${API_URL}/products`, {
+  const response = await fetch(`/api/products`, {
     method: 'POST',
     body: formData,
   });
@@ -53,7 +53,7 @@ export const updateProduct = async (id: number, productData: UpdateProductPayloa
     formData.append('image', productData.image);
   }
 
-  const response = await fetch(`${API_URL}/products/${id}`, {
+  const response = await fetch(`/api/products/${id}`, {
     method: 'PUT',
     body: formData,
   });
@@ -67,7 +67,7 @@ export const updateProduct = async (id: number, productData: UpdateProductPayloa
 
 // Delete a product
 export const deleteProduct = async (id: number): Promise<void> => {
-  const response = await fetch(`${API_URL}/products/${id}`, {
+  const response = await fetch(`/api/products/${id}`, {
     method: 'DELETE',
   });
 
