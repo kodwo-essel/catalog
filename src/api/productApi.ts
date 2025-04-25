@@ -1,7 +1,6 @@
 import { Product, CreateProductPayload, UpdateProductPayload } from '../types/product';
 
-const API_URL = import.meta.env.VITE_PUBLIC_API_URL;
-
+import { API_URL } from '../config';
 // Fetch all products
 export const fetchProducts = async (): Promise<Product[]> => {
   const response = await fetch(`${API_URL}/products`);
