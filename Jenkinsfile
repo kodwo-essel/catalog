@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = "disaster-recovery-backend"
-        GIT_BRANCH = "master"
+        GIT_BRANCH = "main"
         STATE_FILE_ID = "tfvars-pilot-light-ecr"
         DOCKER_TAG = "frontend-latest"
     }
