@@ -6,12 +6,13 @@ pipeline {
         DOCKER_REGISTRY = "docker.io"
         DOCKER_REPO = "kodwoessel"
         DOCKER_TAG = "latest"
+        GIT_BRANCH = "main"
     }
 
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/kodwo-essel/catalog.git'
+                git branch: "${GIT_BRANCH}", url: 'https://github.com/kodwo-essel/catalog.git'
             }
         }
 
