@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Search } from 'lucide-react';
 import Layout from '../components/layout/Layout';
 import ProductGrid from '../components/products/ProductGrid';
